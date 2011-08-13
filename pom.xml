@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.cccs.build</groupId>
+    <artifactId>parent-pom</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>CCCS Nexus</name>
+    <url>http://craigcook.co.uk/artefacts</url>
+
+    <developers>
+       <developer>
+          <id>Craig Cook</id>
+          <email>craig.cook@bt.com</email>
+       </developer>
+    </developers>
+
+    <properties>
+        <java.version>1.6</java.version>
+    </properties>
+
+  	<distributionManagement>
+    	<repository>
+      	  <id>cccs-releases</id>
+      	  <name>CCCS Releases</name>
+      	  <url>http://craigcook.co.uk/artefacts/content/repositories/releases</url>
+    	</repository>
+	    <snapshotRepository>
+	      <id>cccs-snapshots</id>
+      	  <name>CCCS SNAPSHOTs</name>
+	      <url>http://craigcook.co.uk/artefacts/content/repositories/snapshots</url>
+	    </snapshotRepository>
+  	</distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
