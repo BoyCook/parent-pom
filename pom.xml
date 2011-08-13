@@ -21,12 +21,12 @@
 
   	<distributionManagement>
     	<repository>
-      	  <id>cccs-releases</id>
+      	  <id>releases</id>
       	  <name>CCCS Releases</name>
       	  <url>http://craigcook.co.uk/artefacts/content/repositories/releases</url>
     	</repository>
 	    <snapshotRepository>
-	      <id>cccs-snapshots</id>
+	      <id>snapshots</id>
       	  <name>CCCS SNAPSHOTs</name>
 	      <url>http://craigcook.co.uk/artefacts/content/repositories/snapshots</url>
 	    </snapshotRepository>
