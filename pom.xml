@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.cccs.build</groupId>
@@ -9,38 +10,45 @@
     <url>http://craigcook.co.uk/artefacts</url>
 
     <developers>
-       <developer>
-          <id>Craig Cook</id>
-          <email>craig.cook@bt.com</email>
-       </developer>
+        <developer>
+            <name>Craig Cook</name>
+            <email>craig@craigcook.co.uk</email>
+        </developer>
     </developers>
 
     <properties>
         <java.version>1.6</java.version>
+        <surefire.version>2.4.3</surefire.version>
     </properties>
 
-  	<distributionManagement>
-    	<repository>
-      	  <id>releases</id>
-      	  <name>CCCS Releases</name>
-      	  <url>http://craigcook.co.uk/artefacts/content/repositories/releases</url>
-    	</repository>
-	    <snapshotRepository>
-	      <id>snapshots</id>
-      	  <name>CCCS SNAPSHOTs</name>
-	      <url>http://craigcook.co.uk/artefacts/content/repositories/snapshots</url>
-	    </snapshotRepository>
-  	</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>cccs-releases</id>
+            <name>CCCS Releases</name>
+            <url>http://craigcook.co.uk/artefacts/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>cccs-snapshots</id>
+            <name>CCCS SNAPSHOTs</name>
+            <url>http://craigcook.co.uk/artefacts/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
             </plugin>
         </plugins>
     </build>
